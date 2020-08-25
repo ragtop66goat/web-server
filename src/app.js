@@ -7,6 +7,7 @@ const { response } = require('express')
 
 
 const app = express()
+const port = process.env.PORT || 3000
 
 //handlebars is the template engine. It expects the hbs files to live in the root directory in a directory called views
 //unless told to look elsewhere, hence the viewsPath var pointing to the tmplates file
@@ -105,6 +106,6 @@ app.get('*', (req, res) => {
 })
 
 //this is what port your browser is looking for run this in the terminal with nodemon src/app.js
-app.listen(3000, () => {
-    console.log('Server is starting on port 3000')
+app.listen(port, () => {
+    console.log('Server is starting on port ' + port)
 })
